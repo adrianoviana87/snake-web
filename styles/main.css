@@ -1,0 +1,111 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+#board {
+	height: 90%;
+	width: 90%;
+	display: grid;
+	grid-gap: 1px;
+}
+
+#board > * {
+	background-color: rgb(85, 106, 79);
+}
+
+#board > .snake {
+	background-color: rgb(0, 243, 255) !important;
+}
+
+#board > .food {
+	background-color: rgb(40, 151, 25);
+}
+
+button {
+	background-color: transparent;
+	border: none;
+	color: inherit;
+}
+
+.app {
+	display: flex;
+	width:  100vw;
+	height: 100vh;
+	flex-direction: column;
+	background-color: #313e0f;
+}
+
+.controls-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	margin-top: 13vh;
+	color: transparent;
+}
+
+.controls {
+	display: grid;
+	flex: 0.8;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas:  ". u ."
+												"l . r"
+												". d .";
+}
+
+.controls > #button-up {
+	grid-area: u;
+}
+
+.controls > #button-left {
+	grid-area: l;
+}
+
+.controls > #button-right {
+	grid-area: r;
+}
+
+.controls > #button-down {
+	grid-area: d;
+}
+
+.score {
+	background-color: #eee;
+	display: flex;
+	align-items: center;
+	padding: 0 6%;
+	background-color: #77a200;
+	color: white;
+	text-shadow: 2px 2px 3px black
+}
+
+.score > * {
+	flex: 1 0 0;
+}
+
+.score > #score-value {
+	text-align: left;
+}
+
+.score > #score-message {
+	text-align: right;
+}
+
+.board-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.board-container:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.app.game-over .score {
+	background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,0,0,1) 100%);
+}
