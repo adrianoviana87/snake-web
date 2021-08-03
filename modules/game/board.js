@@ -17,8 +17,16 @@ export class Board extends GameComponent {
 	initialize() {
 		this._ref = document.getElementById('board')
 		const boardRef = this._ref
-		boardRef.style.gridTemplateRows = `repeat(${this.height}, 1fr`
-		boardRef.style.gridTemplateColumns = `repeat(${this.width}, 1fr`
+    if (this.width > this.height) {
+      boardRef.style.gridTemplateRows = `repeat(${this.height}, ${(this.height / this.width) * 10}%`
+      boardRef.style.gridTemplateColumns = `repeat(${this.width}, 1fr`
+    } else if (this.width < this.height) {
+      boardRef.style.gridTemplateRows = `repeat(${this.height}, ${(this.width / this.height) * 10}%`
+      boardRef.style.gridTemplateColumns = `repeat(${this.width}, 1fr`
+    } else {
+      boardRef.style.gridTemplateRows = `repeat(${this.height}, 1fr`
+      boardRef.style.gridTemplateColumns = `repeat(${this.width}, 1fr`
+    }
 
 		boardRef.innerHTML = ''
 

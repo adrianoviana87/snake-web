@@ -5,8 +5,8 @@ body {
 }
 
 #board {
-	height: 90%;
-	width: 90%;
+	height: min(90vw, 90vh);
+	width: min(90vw, 90vh);
 	display: grid;
 	grid-gap: 1px;
 }
@@ -97,7 +97,7 @@ button {
 .board-container {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+  margin-top: 15pt;
 }
 
 .board-container:after {
